@@ -12,15 +12,14 @@ nav a:focus {
 /* Step 2a: Write selector/rule property to position the default position for the skip class element*/
 
 .skip {
-     position: absolute;
      top: -40px;
-     display: none;
+     visibility: hidden;
 }
 
 /* Step 2b: Write selector/rule property to position the skip class element when it is in focus*/
 .skip:focus {
-     position: relative;
      top: 20px;
+     display: block;
 }
 
 
@@ -42,7 +41,6 @@ first div in the grid and place it in the grid. */
      grid-column: 1 / -1; 
      background-image: url("../images/header.jpg");
      background-size: cover;
-     background-attachment: fixed;
      background-repeat: no-repeat;
      background-position: center;
 }
@@ -53,7 +51,7 @@ first div in the grid and place it in the grid. */
       /*This will be a lot of rules.... but be strategic and combine seletors*/
 
 .about, .method, .clients, .contact {
-     grid-column: 2 / span 1; 
+     grid-column: 2 / span 1;
 }
 
 .about, .about-image {
@@ -81,24 +79,24 @@ first div in the grid and place it in the grid. */
 
  /* Step 8: Write the selector/rule property to style the .text-block class. */
 .text-block {
-     display: grid;
-     place-items: center;
+     vertical-align: center;
      text-align: center;
 }
 
+
 /* Add your media query here */
-@media (min-width: 800px) {
+@media screen and (min-width: 800px) {
   /* Step 9: Write the selector/rule property to style the nav element */
      nav {
-          position: absolute;
-          right: 0;
+          display: right;
           padding: 30px 0px;
      }
 
 
   /* Step 10: Write the selector/rule property to update the .container class */
      .container {
-          grid-template-columns: 50px auto 500px auto 50px;
+         display: grid;
+         grid-template-columns: 50px auto 500px auto 50px;
      }
 
   /* Steps 11 and 12: Update the grid-column property of the grid's children (where-needed)*/
