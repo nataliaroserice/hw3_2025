@@ -11,15 +11,17 @@ nav a:focus {
 
 /* Step 2a: Write selector/rule property to position the default position for the skip class element*/
 
-.skip {
+.skip a {
      top: -40px;
-     position: absolute;
+     position: relative;
      visibility: hidden;
 }
 
 /* Step 2b: Write selector/rule property to position the skip class element when it is in focus*/
 .skip:focus {
      top: 20px;
+     visibility: visible;
+     position: relative;
      display: block;
 }
 
@@ -75,6 +77,8 @@ first div in the grid and place it in the grid. */
 .about-image, .method-image, .clients-image, .contact-image {
      grid-column: 1 / -1;
      max-height: 600px;
+     height: auto;
+     object-fit: cover;
      overflow: hidden;
 }
 
@@ -82,39 +86,39 @@ first div in the grid and place it in the grid. */
 .text-block {
      vertical-align: center;
      text-align: center;
+     justify-content: center;
 }
-
 
 /* Add your media query here */
 @media screen and (min-width: 800px) {
-  /* Step 9: Write the selector/rule property to style the nav element */
-     nav {
-          display: grid;
-          justify-content: end;
-          padding: 30px 0px;
-     }
-
-
-  /* Step 10: Write the selector/rule property to update the .container class */
-     .container {
-         display: grid;
-         grid-template-columns: 50px auto 500px auto 50px;
-     }
-
-  /* Steps 11 and 12: Update the grid-column property of the grid's children (where-needed)*/
-     .about, .clients, .method-image, .contact-image {
-          grid-column: 3 / span 2;
-     }
-
-     .method, .contact, .about-image, .clients-image {
-          grid-column: 2 / span 2;
-     }
-
-
- /* Step 13:Write the selector/rule property to update the .text-block class */
-     .text-block {
-          max-height: 250px;
-          overflow: visible;
-     }
-
-}
+     /* Step 9: Write the selector/rule property to style the nav element */
+        nav {
+             display: grid;
+             justify-content: end;
+             padding: 30px 0px;
+        }
+   
+   
+     /* Step 10: Write the selector/rule property to update the .container class */
+        .container {
+            display: grid;
+            grid-template-columns: 50px auto 500px auto 50px;
+        }
+   
+     /* Steps 11 and 12: Update the grid-column property of the grid's children (where-needed)*/
+        .about, .clients, .method-image, .contact-image {
+             grid-column: 3 / span 2;
+        }
+   
+        .method, .contact, .about-image, .clients-image {
+             grid-column: 2 / span 2;
+        }
+   
+   
+    /* Step 13:Write the selector/rule property to update the .text-block class */
+        .text-block {
+             max-height: 250px;
+             overflow: visible;
+        }
+   
+   }
